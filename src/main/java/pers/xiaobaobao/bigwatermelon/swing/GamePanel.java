@@ -26,9 +26,9 @@ public class GamePanel extends JPanel {
 	ScheduledThreadPoolExecutor executor = new ScheduledThreadPoolExecutor(1, new NamedThreadFactory("paint"));
 
 	public void init() {
-		WaterMelon waterMelon = new WaterMelon(20, 0, this);
-		waterMelon.setX(0);
-		waterMelon.setY(370);
+		WaterMelon waterMelon = new WaterMelon(10, 30, this);
+		waterMelon.setX(50);
+		waterMelon.setY(50);
 		waterMelon.setSize(30);
 
 		waterMelonList.add(waterMelon);
