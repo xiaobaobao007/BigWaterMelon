@@ -10,8 +10,8 @@ import javax.swing.*;
  */
 public class GameFrame extends JFrame {
 
-	private static final int FRAME_WIDTH = 500;
-	private static final int FRAME_HEIGHT = 500;
+	private static final int FRAME_WIDTH = GamePanel.X_MAX + GamePanel.START_X * 2;
+	private static final int FRAME_HEIGHT = GamePanel.Y_MAX + GamePanel.START_Y * 2 + 50;
 
 	private final GamePanel gamePanel;
 

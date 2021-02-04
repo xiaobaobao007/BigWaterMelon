@@ -12,5 +12,5 @@ public class Constant {
 	/**
 	 * 空气阻力
 	 */
-	public static final float AIR_RESISTANCE = 0.038F;
+	public static final float AIR_RESISTANCE = 0.018F;
 }

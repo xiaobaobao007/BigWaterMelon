@@ -18,8 +18,8 @@ public class GamePanel extends JPanel {
 
 	public static final int START_X = 50;
 	public static final int START_Y = 50;
-	public static final int X_MAX = 400;
-	public static final int Y_MAX = 400;
+	public static final int X_MAX = 600;
+	public static final int Y_MAX = 600;
 	private static final long PAINT_TIME = 25L;
 
 	private final LinkedList<WaterMelon> waterMelonList = new LinkedList<>();
