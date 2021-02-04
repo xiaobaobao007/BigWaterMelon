@@ -1,32 +1,44 @@
 package pers.xiaobaobao.bigwatermelon.domain;
 
+import pers.xiaobaobao.bigwatermelon.config.Constant;
+
 /**
  * @author bao meng yang <932824098@qq.com>
  * @date 2021/2/4，15:08:34
  */
 public class Gravity {
-	private int xV;
-	private int yV;
+	private float xV;
+	private float yV;
 
 	public void nextX(boolean collision) {
 		if (xV == 0) {
 			return;
 		}
 		if (collision) {
-			xV = xV * -4 / 5;
+			xV = xV * -Constant.COLLISION_PER;
+		} else if (xV > 0) {
+			xV -= Constant.AIR_RESISTANCE;
+			if (xV < 0) {
+				xV = 0;
+			}
+		} else {
+			xV += Constant.AIR_RESISTANCE;
+			if (xV > 0) {
+				xV = 0;
+			}
 		}
 	}
 
 	public void nextY(boolean collision) {
 		if (collision) {
 			yV++;
-			yV = yV * -4 / 5;
+			yV = yV * -Constant.COLLISION_PER;
 		} else {
 			yV--;
 		}
 	}
 
-	public int getxV() {
+	public float getxV() {
 		return xV;
 	}
 
@@ -34,7 +46,7 @@ public class Gravity {
 		this.xV = xV;
 	}
 
-	public int getyV() {
+	public float getyV() {
 		return yV;
 	}
 
