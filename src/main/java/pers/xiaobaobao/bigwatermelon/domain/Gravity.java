@@ -42,7 +42,7 @@ public class Gravity {
 		return xV;
 	}
 
-	public void setxV(int xV) {
+	public void setxV(float xV) {
 		this.xV = xV;
 	}
 
@@ -50,12 +50,12 @@ public class Gravity {
 		return yV;
 	}
 
-	public void setyV(int yV) {
+	public void setyV(float yV) {
 		this.yV = yV;
 	}
 
 	@Override
 	public String toString() {
-		return "{" + "xV=" + xV + ", yV=" + yV + '}';
+		return "{" + "xV=" + (int) xV + ", yV=" + (int) yV + '}';
 	}
 }

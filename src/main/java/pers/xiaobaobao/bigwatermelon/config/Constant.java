@@ -9,8 +9,14 @@ public class Constant {
 	 * 碰撞系数
 	 */
 	public static final float COLLISION_PER = 0.75F;
+
 	/**
 	 * 空气阻力
 	 */
-	public static final float AIR_RESISTANCE = 0.018F;
+	public static final float AIR_RESISTANCE = 0.03F;
+
+	/**
+	 * 绘画间隔，也是决定速度
+	 */
+	public static final long PAINT_TIME = 100L;
 }

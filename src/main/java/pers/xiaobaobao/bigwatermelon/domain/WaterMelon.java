@@ -7,6 +7,7 @@ import pers.xiaobaobao.bigwatermelon.swing.GamePanel;
  * @date 2021/2/4，14:19:10
  */
 public class WaterMelon {
+	private final int id;
 	private int x;
 	private int y;
 	private int level;
@@ -15,11 +16,22 @@ public class WaterMelon {
 	private final Gravity gravity;
 	private final GamePanel gamePanel;
 
-	public WaterMelon(int xV, int yV, GamePanel gamePanel) {
+	public WaterMelon(int id, int xV, int yV, GamePanel gamePanel) {
+		this.id = id;
 		gravity = new Gravity();
 		gravity.setxV(xV);
 		gravity.setyV(yV);
 		this.gamePanel = gamePanel;
+	}
+
+	public void back() {
+		float i;
+		if ((i = gravity.getxV()) != 0) {
+			x -= i;
+		}
+		if ((i = gravity.getyV()) != 0) {
+			y -= i;
+		}
 	}
 
 	/**
@@ -36,6 +48,8 @@ public class WaterMelon {
 
 		x += gravity.getxV();
 		y += gravity.getyV();
+
+		gamePanel.judgeCollision(this);
 
 		boolean xCollision = true;
 		if (x < 0) {
@@ -95,8 +109,17 @@ public class WaterMelon {
 		return r;
 	}
 
+	public Gravity getGravity() {
+		return gravity;
+	}
+
+	// @Override
+	// public String toString() {
+	// 	return "{" + "x=" + x + ", y=" + y + ", level=" + level + ", size=" + size + ", gravity=" + gravity + '}';
+	// }
+
 	@Override
 	public String toString() {
-		return "{" + "x=" + x + ", y=" + y + ", level=" + level + ", size=" + size + ", gravity=" + gravity + '}';
+		return "{" + "id=" + id + ", x=" + x + ", y=" + y + ", size=" + size + ", gravity=" + gravity + "}";
 	}
 }
